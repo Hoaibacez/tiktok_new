@@ -1,0 +1,38 @@
+$height: 60px;
+
+.wrapper {
+    background-color: #fff;
+    border-bottom: 1px solid #eaeaea;
+}
+
+body {
+    display: flex;
+    height: height;
+    align-items: center;
+}
+
+.logo {
+    height: 22px;
+}
+
+.searchBox {
+    width: 255px;
+    background-color: gray;
+    font-size: 16px;
+    padding: 0 16px;
+    border-radius: 92px;
+    border:  1px solid transparent;
+
+    &:focus-within {
+        outline: 1px solid;
+    }
+}
+
+.searchInput {
+    width: 252px;
+    padding: 13px 0;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
+
