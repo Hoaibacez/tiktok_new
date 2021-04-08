@@ -1,20 +1,23 @@
-import styles from './Button.module.scss'
+import styles from "./Button.module.scss";
 
 function Button({
-    type='primary',
-    title='',
-    onClick= () => {}
+  size = "m",
+  type = "primary",
+  children = null,
+  underline = false,
+  onClick = () => {}
 }) {
-    const classNames = [styles.wraper, styles.type]
-
-    return (
-        <button
-            className={classNames.join(' ')}
-            onClick={onClick}
-        >
-            <span>{title}</span>
-        </button>
-    )
+  const classNames = [
+    styles.wrapper,
+    styles[type],
+    styles[size],
+    underline ? styles.underline : ""
+  ];
+  return (
+    <button className={classNames.join(" ")} onClick={onClick}>
+      <span>{children}</span>
+    </button>
+  );
 }
 
-export default Button
+export default Button;

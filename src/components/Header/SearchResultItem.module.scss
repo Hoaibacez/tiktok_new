@@ -1,0 +1,17 @@
+li {
+  list-style: none;
+  padding: 10px 0;
+  width: 360px;
+  display: flex;
+}
+
+li:last-child {
+  padding-bottom: 20px;
+}
+
+.FontAwesomeIcon {
+  display: none
+}
+.show{
+  display: inline-block
+}
