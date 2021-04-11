@@ -2,7 +2,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUsers } from '@fortawesome/free-solid-svg-icons'
 import { NavLink } from 'react-router-dom'
 
-import Button from '../../../packages/sondn-button'
+import Button from '../../../packages/bacnh-button'
 import config from '../../../config'
 import styles from './TopSidebar.module.scss'
 

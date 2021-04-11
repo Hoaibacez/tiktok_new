@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom'
 
-import Button from '../../packages/sondn-button'
+import Button from '../../packages/bacnh-button'
 import logoDark from '../../assets/img/logo-dark.svg'
 import logoTextDark from '../../assets/img/logo-text-dark.svg'
 import config from '../../config'
