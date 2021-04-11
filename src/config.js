@@ -1,6 +1,9 @@
 const config = {
+    mainWidth: 1100,
     routes: {
-        home: '/'
+        home: '/',
+        following: '/following',
+        postDetail: '/:nickname/video/:videoId'
     }
 }
 

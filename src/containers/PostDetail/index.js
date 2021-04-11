@@ -1,3 +1,1 @@
-import PostDetail from './PostDetail'
-
-export default PostDetail
+export { default } from './PostDetail'

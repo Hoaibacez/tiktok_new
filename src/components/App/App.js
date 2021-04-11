@@ -6,22 +6,20 @@ import {
 import { Grid } from '@mycv/mycv-grid'
 
 import HomeContainer from '../../containers/Home'
-import HeaderContainer from '../Header'
+import PostDetailContainer from '../../containers/PostDetail'
+import HeaderComponent from '../../components/Header'
 import config from '../../config'
 
 function App() {
     return (
         <Router>
             <Grid>
-                <HeaderContainer />
+                <HeaderComponent />
 
-                <Grid type='wide'>
+                <Grid type="wide" maxWidth={config.mainWidth}>
                     <Switch>
-                        <Route 
-                            exact 
-                            path={config.routes.home} 
-                            component={HomeContainer} 
-                        />
+                        <Route exact path={config.routes.home} component={HomeContainer} />
+                        <Route exact path={config.routes.postDetail} component={PostDetailContainer} />
                     </Switch>
                 </Grid>
             </Grid>
