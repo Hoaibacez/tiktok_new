@@ -37,19 +37,15 @@
 }
 
 .content {
-  // display: flex
+  display: flex;
   position: relative;
 }
 
 .actionBox {
-  // display: flex
-  position: absolute;
-  left: calc(0.57 * (400px + ((100vw - 768px) / 1152) * 100));
-  right: -64px;
-  bottom: 0px;
   display: flex;
   flex-direction: column;
   z-index: 1;
+  position: relative;
 }
 
 .hasTag {
@@ -61,4 +57,10 @@
   height: calc(400px + ((100vw - 768px) / 1152) * 100);
   position: relative;
   border-radius: 8px;
+}
+
+.actionBtn {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
 }

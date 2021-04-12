@@ -21,7 +21,10 @@ function PostItem({
   onLike = defaultFn,
   onComment = defaultFn,
   onShare = defaultFn,
-  onShowDetail = defaultFn
+  onShowDetail = defaultFn,
+  isHorizontal = false,
+  isVertical = false,
+  isSquare = false
 }) {
   return (
     <div className={styles.wrapper}>

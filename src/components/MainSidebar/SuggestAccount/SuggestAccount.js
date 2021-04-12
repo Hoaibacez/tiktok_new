@@ -7,13 +7,13 @@ function SuggestAccount({
     return (
         <div className={styles.wrapper}>
             <p className={styles.heading}>Suggested accounts</p>
-
+            
             {data.map(account => (
                 <AccountItem
-                    key={account.id}
-                    avatar={account.avatar}
-                    username={account.username}
-                    name={account.name}
+                    key={account.data.id}
+                    avatar={account.data.avatar}
+                    username={account.data.nickname}
+                    name={account.fullName}
                 />
             ))}
         </div>
