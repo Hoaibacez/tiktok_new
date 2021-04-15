@@ -65,7 +65,7 @@ function Home() {
             onComment={post.data.onComment}
             onShare={post.data.onShare}
             onShowDetail={() =>
-              history.push("/@baoboii_002/video/6948366460460764418")
+              history.push(`${post.data.user.nickname}/video/${post.data.uuid}`)
             }
             isHorizontal={post.data.is_Horizontal}
             isVertical={post.data.is_Vertical}
