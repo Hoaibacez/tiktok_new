@@ -3,7 +3,6 @@ import { faHeart, faComment, faShare } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import config from "../../config";
 
-import video01 from "../../assets/videos/phuongly.mp4";
 import styles from "./PostItem.module.scss";
 
 const defaultFn = () => {};
@@ -14,7 +13,8 @@ function PostItem({
   username = "",
   publishedAt = "",
   postContent = "",
-  hasTag = "",
+  // hasTag = "",
+  video = "",
   likeCount = 0,
   commentCount = 0,
   shareCount = 0,
@@ -45,19 +45,19 @@ function PostItem({
 
           <div className={styles.postContent}>
             {postContent}
-            <Link
+            {/* <Link
               to={`${config.routes.home}@${username}`}
               className={styles.hasTag}
             >
               {hasTag}
-            </Link>
+            </Link> */}
           </div>
         </div>
       </div>
 
       <div className={styles.content}>
         <video
-          src={video01}
+          src={video}
           className={styles.video}
           onClick={onShowDetail}
           controls
