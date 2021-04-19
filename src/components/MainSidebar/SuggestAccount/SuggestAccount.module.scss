@@ -33,6 +33,9 @@
     border-radius: 50%;
     width: 48px;
     height: 48px;
+    overflow: hidden;
+    flex-shrink: 0;
+    background: #eaeaea;
 }
 
 .accountItem {
@@ -40,6 +43,8 @@
     height: 64px;
     -webkit-box-align: center;
     align-items: center;
+    // overflow: hidden;
+    // text-overflow: ellipsis
 }
 
 .accountBody {
@@ -54,6 +59,11 @@
     line-height: 25px;
     -webkit-box-align: center;
     align-items: center;
+    max-width: 140px;
+    margin-right: 4px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .name {
@@ -66,4 +76,22 @@
     text-overflow: ellipsis;
     overflow: hidden;
     max-width: 140px;
+}
+
+.iconTick {
+    color: rgb(32, 213, 236);
+    width: 12px;
+    height: 12px;
+}
+
+.display {
+    display: flex;
+    height: 25px;
+    font-family: sofiapro-bold, PingFangSC, sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 25px;
+    // color: rgb(32, 213, 236);
+    -webkit-box-align: center;
+    align-items: center;
 }

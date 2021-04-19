@@ -57,7 +57,7 @@ function Home() {
             publishedAt={post.data.published_at}
             postContent={post.data.description}
             video={post.data.file_url}
-            // hasTag={post.data.hasTag}
+            tik={post.data.tik}
             likeCount={post.data.likes_count}
             commentCount={post.data.comments_count}
             shareCount={post.data.shares_count}
