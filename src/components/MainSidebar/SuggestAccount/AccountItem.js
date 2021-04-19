@@ -6,7 +6,7 @@ import config from "../../../config";
 import styles from "./SuggestAccount.module.scss";
 
 function AccountItem({ avatar = "", username = "", name = "", tick = "" }) {
-  const checkTickClass = tick ? { display: "inline" } : { display: "none" };
+  const checkTickClass = tick ? { display: "block" } : { display: "none" };
   return (
     <Tippy content="Hello" placement="bottom">
       <Link
