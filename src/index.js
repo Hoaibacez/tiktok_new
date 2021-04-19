@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import axios from "axios";
+import 'overlayscrollbars/css/OverlayScrollbars.css';
 
 import App from "./components/App";
 import reportWebVitals from "./reportWebVitals";

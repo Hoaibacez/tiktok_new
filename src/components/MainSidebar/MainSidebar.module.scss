@@ -1,4 +1,10 @@
 .wrapper {
-    padding-top: 26px;
+    position: sticky;
+    top: 60px;
+    max-height: calc(100vh - 60px);
+    padding-right: 36px;
 }
 
+.os-content {
+    padding: 0;
+}
