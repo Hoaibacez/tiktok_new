@@ -1,21 +1,42 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronUp, faChevronDown } from '@fortawesome/free-solid-svg-icons'
+
 import AccountItem from "./AccountItem";
 import styles from "./SuggestAccount.module.scss";
 
-function SuggestAccount({ data = [] }) {
-  // console.log(data);
+function SuggestAccount({ 
+  data = [], 
+  expandedTitle = 'See more',
+  collapseTitle = 'See less',
+  hideSeeBtn = false,
+  isExpanded = 'false',
+  isCollapse = 'false',
+  collapsedHeight = 'initial',
+  onSeeToggle = () =>{}
+  }) {
+  console.log(isExpanded, isCollapse);
   return (
     <div className={styles.wrapper}>
       <p className={styles.heading}>Suggested accounts</p>
+      <div className={styles.inner} style={{ maxHeight: collapsedHeight }}>
+        {data.map((account) => (
+          <AccountItem
+            key={account.data.id}
+            avatar={account.data.avatar}
+            username={account.data.nickname}
+            name={account.fullName}
+            tick={account.data.tick}
+          />
+        ))}
+      </div>
 
-      {data.map((account) => (
-        <AccountItem
-          key={account.data.id}
-          avatar={account.data.avatar}
-          username={account.data.nickname}
-          name={account.fullName}
-          tick={account.data.tick}
-        />
-      ))}
+      {!hideSeeBtn && (
+        <div className={styles.seeBtn} onClick={onSeeToggle}>
+            <span>{(isExpanded) ? collapseTitle : expandedTitle}</span>
+            <FontAwesomeIcon className={styles.seeIcon} icon={isExpanded ? faChevronUp : faChevronDown} />
+        </div>
+      )}
+
     </div>
   );
 }

@@ -4,48 +4,51 @@ import { Row, Column } from "@mycv/mycv-grid";
 import axios from "axios";
 import Post from "../../entites/Post";
 // import avatar from "../../assets/img/phuong_ly.jpeg";
-import MainSidebar from "../../components/MainSidebar";
+// import MainSidebar from "../../components/MainSidebar";
 import PostItem from "../../components/PostItem";
 import Accounts from "../../entites/Account";
+import Sidebar from "../Sidebar";
 
 function Home() {
   const history = useHistory();
-  const [sugestAcount, setSugestAcount] = useState([]);
+  // const [sugestAcount, setSugestAcount] = useState([]);
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    axios
-      .get("/api/users/suggested?page=1")
-      .then(({ data }) => {
-        const accounts = data.data.map((account) => new Accounts(account));
-        setSugestAcount(accounts);
-        // console.log(sugestAcount);
-      })
-      .catch((e) => {
-        console.log(e);
-      });
+    // axios
+    //   .get("/api/users/suggested?page=1")
+    //   .then(({ data }) => {
+    //     const accounts = data.data.map((account) => new Accounts(account))
+    //     setSugestAcount(accounts)
+    //     // console.log(sugestAcount)
+    //   })
+    //   .catch((e) => {
+    //     console.log(e)
+    //   });
 
     axios
       .get("/api/posts?type=for-you&page=1")
       .then(({ data }) => {
         // console.log(data);
 
-        const postsItem = data.data.map((post) => new Post(post));
+        const postsItem = data.data.map((post) => new Post(post))
         // console.log(postsItem);
         setPosts(postsItem);
       })
       .catch((e) => {
-        console.log(e);
-      });
-  }, []);
+        console.log(e)
+      })
+  }, [])
 
-  const handleLogin = () => {
-    alert("XU LY LOGIN");
-  };
+  // const handleLogin = () => {
+  //   alert("XU LY LOGIN");
+  // };
+
   return (
     <Row>
       <Column size={0} sizeTablet={4} sizeDesktop={3}>
-        <MainSidebar sugestAcount={sugestAcount} onLogin={handleLogin} />
+        <Sidebar />
+        {/* <MainSidebar sugestAcount={sugestAcount} onLogin={handleLogin} /> */}
       </Column>
       <Column size={12} sizeTablet={8} sizeDesktop={9}>
         {posts.map((post) => (

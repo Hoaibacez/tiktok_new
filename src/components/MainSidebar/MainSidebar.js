@@ -6,7 +6,9 @@ import Footer from "./Footer";
 import styles from "./MainSidebar.module.scss";
 import "./scroll.scss";
 
-function MainSidebar({ onLogin, sugestAcount }) {
+function MainSidebar({ onLogin, ...props }) {
+  // console.log(props);
+
   return (
     <OverlayScrollbarsComponent
       className={styles.wrapper}
@@ -22,7 +24,7 @@ function MainSidebar({ onLogin, sugestAcount }) {
     >
       <TopSidebar onLogin={onLogin} />
 
-      <SuggestAccount data={sugestAcount} />
+      <SuggestAccount {...props} />
 
       <Footer />
     </OverlayScrollbarsComponent>
