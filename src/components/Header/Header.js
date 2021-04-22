@@ -30,7 +30,9 @@ function Header() {
             <Button type="normal" underline>
               Upload
             </Button>
-            <Button type="primary">Log in</Button>
+            <Link to={config.routes.login}>
+              <Button type="primary">Log in</Button>
+            </Link>
           </div>
         </div>
       </Grid>

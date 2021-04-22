@@ -1,22 +1,20 @@
 import { useParams } from 'react-router-dom'
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faCheckCircle } from "@fortawesome/free-solid-svg-icons";
 import axios from 'axios'
+import config from "../../config";
 
+import styles from './PostDetail.module.scss'
 function PostDetail() {
     const [posts, setPosts] = useState({});
     const { nickname, videoId } = useParams();
 
-    const [numb, setNumb] = useState(1);
-    // const {numb, setNumb} = useState(1);
-
-    useEffect(() =>{
-        console.log('Change');
-    }, [numb])
     useEffect(() => {
         axios
           .get(`/api/posts/${videoId}`)
           .then(({ data }) => {
-            // console.log(data);
             setPosts(data.data);
             // console.log(posts);
 
@@ -25,19 +23,38 @@ function PostDetail() {
             console.log(e);
           });
       }, [videoId]);
-    // console.log(posts);
+    console.log(posts);
     
     return (
         // posts
-        <div>
-            <h1>{numb}</h1>
-            <button onClick={() => {setNumb(numb + 1)}}><h1>increse</h1></button>
-            <h1 style={{ fontSize: 32 }}>{nickname} - {videoId}</h1>
-            <p>des: {posts.description}</p>
-            <video
-                src={posts.file_url}
-                controls
-            />
+        <div className={styles.wrapper}>
+            {/* <h1 style={{ fontSize: 32 }}>{nickname} - {videoId}</h1> */}
+            {/* <p>des: {posts.description}</p> */}
+            <div className={styles.videoContainer}>
+				<video
+					src={posts.file_url}
+					controls
+				/>
+            </div>
+            <div className={styles.videoContentContainer}>
+				{/* <Link
+					to={`${config.routes.home}@${username}`}
+					className={styles.accountItem}
+				>
+					<img src={avatar} className={styles.avatar} alt={username} />
+					<div className={styles.accountBody}>
+					<div className={styles.display}>
+						<h3 className={styles.username}>{username}</h3>
+						<FontAwesomeIcon
+						icon={faCheckCircle}
+						className={styles.iconTick}
+						style={checkTickClass}
+						/>
+					</div>
+					<p className={styles.name}>{name}</p>
+					</div>
+				</Link> */}
+            </div>
         </div>
     )
 }

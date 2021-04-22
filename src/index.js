@@ -9,7 +9,7 @@ import "./assets/styles/global.scss";
 
 //API config
 axios.defaults.baseURL = "https://tiktok.f8team.dev";
-
+axios.defaults.headers.common['Authorization'] = 'Bearer ' + window.localStorage.getItem('token')
 ReactDOM.render(
   <React.StrictMode>
     <App />

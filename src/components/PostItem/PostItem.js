@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment, faShare } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -61,6 +62,7 @@ function PostItem({
           className={styles.video}
           onClick={onShowDetail}
           controls
+          muted
         />
 
         <div className={styles.actionBox}>

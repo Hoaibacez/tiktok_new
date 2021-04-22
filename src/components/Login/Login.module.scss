@@ -1,0 +1,27 @@
+.wrapper {
+    overflow-x: hidden;
+    width: 100vw;
+    height: 100vh;
+    font-family: "sofiapro-regular";
+    font-size: 14px;
+    // position: fixed;
+}
+
+
+.model {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.input {
+    background-color: #eaeaea;
+    padding: 10px;
+    margin: 10px;
+}
+
+.button {
+    background: #eaeaea;
+    width: 60px;
+    height: 30px;
+}
