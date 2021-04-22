@@ -28,8 +28,6 @@ function Sidebar() {
                 perPage: data.meta.pagination.per_page,
             })
             if (pagination.currentPage  === pagination.totalPages) {
-                // setIsExpanded(!isExpanded)
-
                 setIsCollapse(!isCollapse)
             }
 
@@ -46,6 +44,7 @@ function Sidebar() {
     const handleSeeToggle = () => {
         if (pagination.currentPage === pagination.totalPages) {
             setIsExpanded(!isExpanded)
+            setIsCollapse(!isCollapse)
         }
 
         if (pagination.currentPage < pagination.totalPages) {
@@ -57,12 +56,12 @@ function Sidebar() {
     }
 
     const collapsedHeight = isExpanded ? pagination.perPage * 64 : pagination.currentPage*(pagination.perPage * 64)
-    console.log(pagination);
+    // console.log(pagination);
 
     return (
         <MainSidebarComponent 
             onLogin={handleLogin}
-            isExpanded={isExpanded} 
+            // isExpanded={isExpanded} 
             isCollapse={isCollapse} 
             collapsedHeight={collapsedHeight}
             onSeeToggle={handleSeeToggle}

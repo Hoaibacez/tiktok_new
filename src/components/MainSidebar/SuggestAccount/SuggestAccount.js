@@ -9,12 +9,12 @@ function SuggestAccount({
   expandedTitle = 'See more',
   collapseTitle = 'See less',
   hideSeeBtn = false,
-  isExpanded = 'false',
+  // isExpanded = 'false',
   isCollapse = 'false',
   collapsedHeight = 'initial',
   onSeeToggle = () =>{}
   }) {
-  console.log(isExpanded, isCollapse);
+  console.log(data);
   return (
     <div className={styles.wrapper}>
       <p className={styles.heading}>Suggested accounts</p>
@@ -32,8 +32,8 @@ function SuggestAccount({
 
       {!hideSeeBtn && (
         <div className={styles.seeBtn} onClick={onSeeToggle}>
-            <span>{(isExpanded) ? collapseTitle : expandedTitle}</span>
-            <FontAwesomeIcon className={styles.seeIcon} icon={isExpanded ? faChevronUp : faChevronDown} />
+            <span>{(isCollapse) ? collapseTitle : expandedTitle}</span>
+            <FontAwesomeIcon className={styles.seeIcon} icon={isCollapse ? faChevronUp : faChevronDown} />
         </div>
       )}
 

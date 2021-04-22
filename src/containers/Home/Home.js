@@ -6,7 +6,7 @@ import Post from "../../entites/Post";
 // import avatar from "../../assets/img/phuong_ly.jpeg";
 // import MainSidebar from "../../components/MainSidebar";
 import PostItem from "../../components/PostItem";
-import Accounts from "../../entites/Account";
+// import Accounts from "../../entites/Account";
 import Sidebar from "../Sidebar";
 
 function Home() {
@@ -15,17 +15,6 @@ function Home() {
   const [posts, setPosts] = useState([]);
 
   useEffect(() => {
-    // axios
-    //   .get("/api/users/suggested?page=1")
-    //   .then(({ data }) => {
-    //     const accounts = data.data.map((account) => new Accounts(account))
-    //     setSugestAcount(accounts)
-    //     // console.log(sugestAcount)
-    //   })
-    //   .catch((e) => {
-    //     console.log(e)
-    //   });
-
     axios
       .get("/api/posts?type=for-you&page=1")
       .then(({ data }) => {
@@ -39,10 +28,6 @@ function Home() {
         console.log(e)
       })
   }, [])
-
-  // const handleLogin = () => {
-  //   alert("XU LY LOGIN");
-  // };
 
   return (
     <Row>
