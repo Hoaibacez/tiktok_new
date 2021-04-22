@@ -99,3 +99,25 @@
     -webkit-box-align: center;
     align-items: center;
 }
+
+.seeBtn {
+    height: 25px;
+    padding-left: 4px;
+    align-items: center;
+    cursor: pointer;
+    margin-top: 8px;
+    color: #fe2c55;
+    margin-bottom: 9px;
+    display: flex;
+    span {
+        font-weight: 700;
+        font-size: 18px;
+        line-height: 18px;
+        display: block;
+    }
+    .seeIcon {
+        height: 17px;
+        width: 17px;
+        transform: translate(4px, 0px);
+    }
+}
