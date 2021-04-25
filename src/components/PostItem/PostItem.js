@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+// import { useRef } from 'react'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faComment, faShare } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
@@ -14,6 +14,8 @@ function PostItem({
   username = "",
   publishedAt = "",
   postContent = "",
+  onVideoRef = defaultFn,
+  id = '',
   // hasTag = "",
   video = "",
   likeCount = 0,
@@ -58,6 +60,7 @@ function PostItem({
 
       <div className={styles.content}>
         <video
+          ref={ref => onVideoRef(ref, id)}
           src={video}
           className={styles.video}
           onClick={onShowDetail}
