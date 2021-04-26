@@ -31,7 +31,6 @@ function Sidebar() {
         console.log(e);
       });
   }, [pagination.currentPage]);
-
   const handleLogin = () => {
     alert("XU LY LOGIN");
   };
@@ -56,7 +55,7 @@ function Sidebar() {
   const collapsedHeight = isExpanded
     ? pagination.perPage * 64
     : pagination.currentPage * (pagination.perPage * 64);
-  // console.log(sugestAcount);
+  console.log(sugestAcount);
 
   return (
     <MainSidebarComponent
